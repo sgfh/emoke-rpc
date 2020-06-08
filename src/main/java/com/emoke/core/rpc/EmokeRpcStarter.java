@@ -3,7 +3,6 @@ package com.emoke.core.rpc;
 import com.emoke.core.rpc.annotation.EmokeRpcService;
 import com.emoke.core.rpc.proxy.EmokeProxy;
 import com.emoke.core.rpc.util.ReflectUtil;
-import org.apache.commons.beanutils.ConvertUtils;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -44,8 +43,8 @@ public class EmokeRpcStarter {
                 Class<?> ifc=Class.forName(interfacesStr);
                 field.setAccessible(true);
                 Object obj=EmokeProxy.createProxy(ifc);
-                System.out.println("$$$$$########"+ConvertUtils.convert(obj,type).getClass());
-                Object o=ConvertUtils.convert(obj,type);
+          //      System.out.println("$$$$$########"+ConvertUtils.convert(obj,type).getClass());
+           //     Object o=ConvertUtils.convert(obj,type);
 //                try {
 //                    o.getClass().getMethod("say",new Class[]{}).invoke(cls,new Object[]{});
 //                } catch (InvocationTargetException e) {
@@ -54,7 +53,7 @@ public class EmokeRpcStarter {
 //                    e.printStackTrace();
 //                }
 
-                field.set(cls, ConvertUtils.convert(obj,type));
+             //   field.set(cls, ConvertUtils.convert(obj,type));
             }
         }
     }
